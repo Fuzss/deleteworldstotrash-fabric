@@ -21,14 +21,9 @@ public abstract class LevelStorageAccessMixin {
     @Final
     Path levelPath;
 
-    @Shadow
-    private void checkLock() {
-        throw new IllegalStateException();
-    }
-
-    @Inject(method = "deleteLevel", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "deleteLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;checkLock()V", shift = At.Shift.AFTER), cancellable = true)
     public void deleteLevel(CallbackInfo callbackInfo) {
-        if (WorldTrashUtil.tryMoveToTrash(this.lock, this.levelPath, this::checkLock)) {
+        if (WorldTrashUtil.tryMoveToTrash(this.lock, this.levelPath)) {
             callbackInfo.cancel();
         }
     }
