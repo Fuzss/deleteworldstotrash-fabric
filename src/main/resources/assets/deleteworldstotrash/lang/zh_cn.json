@@ -1,0 +1,9 @@
+{
+  "deleteworldstotrash.selectWorld.deleteWarning": "“%s”将会被移动至%s，所以有必要的话你可以在之后还原它。",
+  "deleteworldstotrash.selectWorld.deleteFailure": "移动至%s失败",
+  "deleteworldstotrash.selectWorld.recycleBin": "回收站",
+  "deleteworldstotrash.selectWorld.trash": "移至回收站",
+  "deleteworldstotrash.selectWorld.deleteButton": "移动至%s",
+  "deleteworldstotrash.selectWorld.recycleBinButton": "回收站",
+  "deleteworldstotrash.selectWorld.trashButton": "移至回收站"
+}
